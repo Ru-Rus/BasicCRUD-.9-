@@ -1,7 +1,12 @@
+﻿using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.DependencyInjection;
+using BasicCRUD_._9_.Data;
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddRazorPages();
+builder.Services.AddDbContext<BasicCRUD__9_Context>(options =>
+    options.UseSqlServer(builder.Configuration.GetConnectionString("BasicCRUD__9_Context") ?? throw new InvalidOperationException("Connection string 'BasicCRUD__9_Context' not found.")));
 
 var app = builder.Build();
 

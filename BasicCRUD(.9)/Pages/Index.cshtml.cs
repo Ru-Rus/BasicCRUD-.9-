@@ -12,9 +12,9 @@ namespace BasicCRUD_._9_.Pages
             _logger = logger;
         }
 
-        public void OnGet()
+        public IActionResult OnGet()
         {
-
+            return RedirectToPage("/Users/Index");
         }
     }
 }
